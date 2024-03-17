@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpooling Rewards</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap");
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #0c0c0c;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+        .carpool-calculator .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.carpool-calculator h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.carpool-calculator form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.carpool-calculator label {
+    margin-top: 10px;
+}
+
+.carpool-calculator input {
+    margin-top: 5px;
+    padding: 5px;
+    width: 200px;
+}
+.carpool-calculator button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.carpool-calculator button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <section class="service_section layout_padding">
+        <div class="service_container">
+          <div class="container ">
+            <div class="heading_container heading_center">
+              <h2>
+                Reward <span>Programs</span>
+              </h2>
+              <p>
+                The less the 'Carbon Footprints', The more the Rewards you will earn. Decrease your carbon footprints by carpooling more often and get a chance to win more exciting rewards and coupans. 
+              </p>
+            </div>
+            <div class="carpool-calculator">
+              <div class="container">
+                <h1>Carpooling Carbon Footprint Calculator</h1>
+                <form id="carpoolForm">
+                    <label for="dailyMiles">Daily Miles Driven:</label>
+                    <input type="number" id="dailyMiles" name="dailyMiles" min="0" placeholder="Enter miles driven daily">
+                    <br>
+                    <label for="passengers">Number of Passengers:</label>
+                    <input type="number" id="passengers" name="passengers" min="1" placeholder="Enter number of passengers">
+                    <button type="submit">Check Rewards</button>
+                    
+        </form>
+        <div id="rewardsMessage"></div>
+    </div>
+                
+                <div id="result"></div>
+                <div class="con_btn" style="text-align: center;">
+              </div>
+              
+                  
+              </a>
+              
+          </div>
+          
+          </div>
+        </div>
+      </section>
+    <script src="script.js"></script>
+</body>
+</html>

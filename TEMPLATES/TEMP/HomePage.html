@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TREATS WITH YOU</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0;
+      font-family: 'Raleway';
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ffffff;
+      /* Change background color to white */
+      overflow-y: scroll;
+      background-size: cover;
+      color: #222684;
+      /* Change text color to dark blue */
+    }
+
+    .navbar {
+      background-color:  #F1DDD9;
+      background-attachment: fixed;
+      height: auto;
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      height: 60px;
+      width: 120px;
+    }
+
+    .logo {
+      background-image: url("treats_logo.png");
+      background-size: cover;
+      height: 60px;
+      width: 100%;
+    }
+
+    .menu-items {
+      display: flex;
+    }
+
+    .menu-item {
+      margin-left: 2rem;
+    }
+
+    .menu-item a {
+      text-decoration: none;
+      color: #222684;
+    }
+
+    .hello-cart {
+      display: flex;
+      align-items: center;
+      color: #222684;
+    }
+
+    .hello-sign,
+    .cart {
+      font-size: 0.9rem;
+      margin-left: 2rem;
+      color: #222684;
+    }
+    .nav-cart{
+      margin: 2rem;
+    }
+    .fa-cart-shopping{
+      font-size: 1.2rem;
+    }
+    .container {
+      max-width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-section,
+    .product-recommendation {
+      height: 500px;
+      width: 100%;
+    }
+
+    .brand-section {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    .instagram-section {
+      height: 500px;
+      width: 100%;
+      background-color:  #F1DDD9;
+      /* Change background color to cream */
+    }
+
+    .brand-content {
+      text-align: center;
+    }
+
+    .brand-content h2 {
+      font-size: 50px;
+      margin-bottom: 20px;
+      font-family: 'Raleway';
+    }
+
+    .brand-content p {
+      font-size: 30px;
+      margin-bottom: 30px;
+      font-family: 'Raleway';
+    }
+
+    .explore-button {
+      background-color: #ff5038;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      font-family: 'Raleway';
+    }
+
+    .explore-button:hover {
+      background-color: #ff6c59;
+    }
+
+    .about-us {
+      height: 500px;
+      width: 100%;
+      background-color: #F1DDD9;
+      /* Change background color of about us and instagram section to orangish cream */
+    }
+
+    .about-us {
+      height: 500px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    .about-content h2,
+    .about-content p {
+      color: #00008B;
+      /* Change text color to dark blue */
+    }
+
+    .about-content {
+      text-align: center;
+    }
+
+    .about-content h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-family: 'Raleway';
+    }
+
+    .about-columns {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .about-text {
+      max-width: 50%;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      font-family: 'Raleway';
+    }
+
+    .product-recommendation,
+    .instagram-section {
+      height: auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .whats_head,
+    .insta {
+      margin: 40px;
+      text-align: center;
+      font-size: 32px;
+      font-family: 'Raleway';
+      padding: 0;
+    }
+
+    .whats_head a,
+    .insta a {
+      text-decoration: none;
+      color: #00008B;
+    }
+
+    .whats_head a:hover {
+      color: rgb(234, 0, 255);
+    }
+
+    .range,
+    .n {
+      margin: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .n-1 {
+      margin-bottom: 5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 0;
+    }
+
+    .range img {
+      width: 18rem;
+      height: 18rem;
+      align-content: center;
+    }
+
+    .n p {
+      width: 18rem;
+      height: 0.6rem;
+      align-content: center;
+      color: #222684;
+      font-weight: bold;
+      font-size: 1.2rem;
+      font-family: 'Raleway';
+      padding-left: 4.2rem;
+    }
+
+    .n-1 p {
+      width: 18rem;
+      height: 0.2rem;
+      align-content: center;
+      color: #222684;
+      font-size: 1rem;
+      font-family: 'Raleway';
+      padding-left: 4.6rem;
+    }
+
+    .row1 {
+      margin: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 2fr);
+      gap: 5px;
+      align-items: center;
+    }
+
+    .row1 img {
+      width: 20rem;
+      height: 20rem;
+    }
+
+    input,
+    button {
+      font-size: 1rem;
+      padding: 0.5rem;
+      width: 100%;
+      border-radius: 0.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    button {
+      background-color: black;
+      color: #ffffff;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      padding: 50px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer-section {
+      flex-basis: 30%;
+    }
+
+    .footer-section h2 {
+      margin-bottom: 30px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .footer-section ul li a:hover {
+      color: #007BFF;
+    }
+
+    .footer-section.about .logo-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .footer-section.about .contact span {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer-section.about .contact i {
+      margin-right: 10px;
+    }
+
+    .footer-section.about .socials a {
+      margin-right: 10px;
+    }
+
+    .footer-section.about .socials a i {
+      font-size: 24px;
+    }
+
+    .footer-section.about .socials a:hover i {
+      color: #007BFF;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer-bottom a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: #007BFF;
+    }
+
+    .colsub p {
+      text-align: left;
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="nav-logo">
+        <div class="logo"></div>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><a href="#">Home</a></div>
+        <div class="menu-item"><a href="TreatPage.html">Treats</a></div>
+        <div class="menu-item"><a href="CakePage.html">Cake</a></div>
+        <div class="menu-item"><a href="IceCreamPage.html">Ice Cream</a></div>
+      </div>
+      <div class="hello-cart">
+        <div class="hello-sign">
+          <p class="first">Hello,</p>
+          <p class="third"><a href="SignupPage.html">Sign In</a></p>
+        </div>
+        <div class="cart">
+          <div class="nav-cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <section class="brand-section">
+      <div class="brand-content">
+        <h2>Sweets for Today</h2>
+        <p>A delightful date with your loved ones</p>
+        <button class="explore-button">Explore Our Treats</button>
+      </div>
+    </section>
+
+    <section class="about-us">
+      <div class="about-content">
+        <h2>Who Are We?</h2>
+        <div class="about-columns">
+          <div class="about-image">
+            <img src="about_image.jpg" alt="About Us Image">
+          </div>
+          <div class="about-text">
+            <p>Welcome to Treats With You, a dessert shop that specializes in high-quality homemade desserts. They offer
+              classic treats like chocolate chip cookies and brownies, as well as unique options like macarons and
+              cupcakes. Their signature cake, the "Treats With You Special," is popular, and they also have fresh fruit
+              tarts and pies for those seeking lighter options. They provide gluten-free and vegan choices to ensure
+              that everyone can enjoy a sweet treat. So come visit us at Treats With You and let us make your day a
+              little sweeter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-recommendation">
+      <div class="whats_head">
+        <a href="#">WHAT'S NEW?</a>
+      </div>
+      <div class="range">
+        <img src="back.png">
+        <img src="back.png">
+        <img src="back.png">
+      </div>
+      <div class="n">
+        <p>Jello Mello</p>
+        <p>Snickers Caramel</p>
+        <p>Califormia Pistachio</p>
+      </div>
+      <div class="n-1">
+        <p>Jello Mello</p>
+        <p>Snickers Caramel</p>
+        <p>Califormia Pistachio</p>
+      </div>
+    </section>
+
+    <section class="instagram-section">
+      <div class="insta">
+        <a href="#">TWY.Social</a>
+      </div>
+      <div class="row1">
+        <img src="back.png">
+        <img src="back.png">
+        <img src="back.png">
+        <img src="back.png">
+        <img src="back.png">
+        <img src="back.png">
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h1 class="logo-text">Treats With You</h1><br>
+        <p>Trats With You,<br>
+          SeamLine Lane,<br>
+          <span>Mumbai
+        </p></span><br>
+        <div class="contact">
+          <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
+          <span><i class="fas fa-envelope"></i> &nbsp; info@yourbrand.com</span>
+        </div><br>
+        <span>
+          <div class="socials">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </div>
+        </span>
+      </div>
+      <div class="footer-section links">
+        <h2>Quick Links</h2>
+        <ul>
+          <a href="#">
+            <li>Home</li>
+          </a>
+          <a href="#">
+            <li>Our Team</li>
+          </a>
+          <a href="#">
+            <li>Location</li>
+          </a>
+          <a href="#">
+            <li>Terms and Conditions</li>
+          </a>
+        </ul>
+      </div>
+      <div class="colsub">
+        <h2>Mail Us</h2><br>
+        <div>
+          <input type="email" value="Your email ID here">
+          <button>Mail Us</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; Treats With You | Designed by Harshini
+    </div>
+
+  </footer>
+</body>
+
+</html>

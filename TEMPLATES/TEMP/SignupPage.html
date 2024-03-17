@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake</title>
+    <style>
+    * {
+      margin: 0;
+      font-family: 'Raleway';
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ffffff;
+      /* Change background color to white */
+      overflow-y: scroll;
+      background-size: cover;
+      color: #222684;
+      /* Change text color to dark blue */
+    }
+    .form{
+      box-sizing: border-box;
+      margin: 4rem;
+    }
+    .navbar {
+      height: 70px;
+      width: 100%;
+      color: rgb(0, 0, 0);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      height: 60px;
+      width: 120px;
+    }
+
+    .logo {
+      background-image: url("treats_logo.png");
+      background-size: cover;
+      height: 60px;
+      width: 100%;
+    }
+
+    .menu-items {
+      display: flex;
+    }
+
+    .menu-item {
+      margin-right: 20px;
+    }
+
+    .menu-item a {
+      text-decoration: none;
+      color: #222684;
+    }
+
+    .hello-cart {
+      display: flex;
+      align-items: center;
+      color: #222684;
+    }
+
+    .hello-sign,
+    .cart {
+      margin-left: 20px;
+      color: #222684;
+    }
+    .form{
+  box-sizing: border-box;
+    margin: 2rem;
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.8rem ;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 0.1rem solid #f1f1f1;
+  margin-bottom: 2rem;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 1.8rem;
+  margin: 1rem 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+.signupbtn{
+    padding: 14px 20px;
+}
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: center;
+  width: 45%;
+  margin: 0.5rem;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+     height: auto;
+  }
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+input,
+    button {
+      font-size: 1rem;
+      padding: 0.5rem;
+      width: 100%;
+      border-radius: 0.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    button {
+      background-color: black;
+      color: #ffffff;
+    }
+
+    .footer-content {
+        background-color: #F1DDD9;
+      display: flex;
+      justify-content: space-between;
+      padding: 50px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer-section {
+      flex-basis: 30%;
+    }
+
+    .footer-section h2 {
+      margin-bottom: 30px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .footer-section ul li a:hover {
+      color: #007BFF;
+    }
+
+    .footer-section.about .logo-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .footer-section.about .contact span {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer-section.about .contact i {
+      margin-right: 10px;
+    }
+
+    .footer-section.about .socials a {
+      margin-right: 10px;
+    }
+
+    .footer-section.about .socials a i {
+      font-size: 24px;
+    }
+
+    .footer-section.about .socials a:hover i {
+      color: #007BFF;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer-bottom a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: #007BFF;
+    }
+
+    .colsub p {
+      text-align: left;
+      margin-top: 0;
+    }
+    </style>
+    <script>
+      function togglePasswordVisibility() {
+          var passwordInput = document.getElementById("password");
+          if (passwordInput.type === "password") {
+              passwordInput.type = "text";
+          } else {
+              passwordInput.type = "password";
+          }
+      }
+  </script>
+</head>
+<body>
+  <header>
+      <div class="navbar">
+          <div class="nav-logo">
+              <div class="logo"></div>
+          </div>
+          <div class="menu-items">
+              <div class="menu-item"><a href="HomePage.html">Home</a></div>
+              <div class="menu-item"><a href="TreatsPage.html">Treats</a></div>
+              <div class="menu-item"><a href="IceCreamPage.html">Ice Cream</a></div>
+              <div class="menu-item"><a href="CakePage.html">Cake</a></div>
+          </div>
+          <div class="hello-cart">
+              <div class="hello-sign">
+                  <p class="first">Hello,</p>
+                  <p class="third">Sign In</p>
+              </div>
+              <div class="cart">
+                  <div class="nav-cart">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+  <div class="form">
+      <form action="/signup_page" style="border:1px solid #ccc" method="post">
+          <div class="container">
+              <h1>Sign Up</h1>
+              <p>Already have an account? Please <a href="LoginForm.html">Login</a></p>
+              <hr>
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required onclick="togglePasswordVisibility()">
+              <label for="psw-repeat"><b>Repeat Password</b></label>
+              <input type="password" placeholder="Repeat Password" name="psw-repeat" required onclick="togglePasswordVisibility()">
+              <label>
+                  <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+              </label>
+              <p>By creating an account you agree to our<a href="#" style="color:dodgerblue">Terms & Privacy</a></p>
+              <div class="clearfix">
+                  <button type="button" class="cancelbtn">Cancel</button>
+                  <button type="submit" class="signupbtn"><a href="pastry.html">Sign Up</a></button>
+              </div>
+          </div>
+      </form>
+  </div>
+  <footer>
+      <div class="footer-content">
+          <div class="footer-section about">
+              <h1 class="logo-text">Treats With You</h1><br>
+              <p>Trats With You,<br>
+                  SeamLine Lane,<br>
+                  <span>Mumbai</span><br>
+              </p>
+              <div class="contact">
+                  <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
+                  <span><i class="fas fa-envelope"></i> &nbsp; info@yourbrand.com</span>
+              </div><br>
+              <span>
+                  <div class="socials">
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-instagram"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-youtube"></i></a>
+                  </div>
+              </span>
+          </div>
+          <div class="footer-section links">
+              <h2>Quick Links</h2>
+              <ul>
+                  <a href="#">
+                      <li>Home</li>
+                  </a>
+                  <a href="#">
+                      <li>Our Team</li>
+                  </a>
+                  <a href="#">
+                      <li>Location</li>
+                  </a>
+                  <a href="#">
+                      <li>Terms and Conditions</li>
+                  </a>
+              </ul>
+          </div>
+          <div class="colsub">
+              <h2>Mail Us</h2><br>
+              <div>
+                  <input type="email" value="Your email ID here">
+                  <button>Mail Us</button>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          &copy; Treats With You | Designed by Harshini
+      </div>
+  </footer>
+</body>
+</html>

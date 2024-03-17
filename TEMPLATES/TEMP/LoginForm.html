@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            overflow-y: scroll;
+            color: #222684;
+        }
+
+        .navbar {
+            height: 70px;
+            width: 100%;
+            color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            height: 60px;
+            width: 120px;
+        }
+
+        .logo {
+            background-image: url("treats_logo.png");
+            background-size: cover;
+            height: 60px;
+            width: 100%;
+        }
+
+        .menu-items {
+            display: flex;
+        }
+
+        .menu-item {
+            margin-right: 20px;
+        }
+
+        .menu-item a {
+            text-decoration: none;
+            color: #222684;
+        }
+
+        .hello-cart {
+            display: flex;
+            align-items: center;
+            color: #222684;
+        }
+
+        .hello-sign,
+        .cart {
+            margin-left: 20px;
+            color: #222684;
+        }
+
+        .form {
+            box-sizing: border-box;
+            margin: 5rem auto; /* Center the form and increase margin */
+            width: 80%; /* Limit the width of the form */
+            max-width: 500px; /* Ensure it doesn't get too wide on large screens */
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        button:hover {
+            opacity:1;
+        }
+
+        .cancelbtn {
+            background-color: #f44336;
+            width: auto;
+            padding: 10px 18px;
+        }
+
+        .loginbtn {
+            float: left;
+            width: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        @media screen and (max-width: 300px) {
+            .loginbtn {
+                width: 100%;
+            }
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        input, button {
+            font-size: 1rem;
+            padding: 0.5rem;
+            width: 100%;
+            border-radius: 0.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        button {
+            background-color: black;
+            color: #ffffff; /* Change text color to white */
+        }
+
+        .footer-content {
+            background-color: #F1DDD9;
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-section {
+            flex-basis: 30%;
+        }
+
+        .footer-section h2 {
+            margin-bottom: 30px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            color: #007BFF;
+        }
+
+        .footer-section.about .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .footer-section.about .contact span {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-section.about .contact i {
+            margin-right: 10px;
+        }
+
+        .footer-section.about .socials a {
+            margin-right: 10px;
+        }
+
+        .footer-section.about .socials a i {
+            font-size: 24px;
+        }
+
+        .footer-section.about .socials a:hover i {
+            color: #007BFF;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-bottom a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: #007BFF;
+        }
+
+        .colsub p {
+            text-align: left;
+            margin-top: 0;
+        }
+    </style>
+    <script>
+      function togglePasswordVisibility() {
+          var passwordInput = document.getElementById("password");
+          if (passwordInput.type === "password") {
+              passwordInput.type = "text";
+          } else {
+              passwordInput.type = "password";
+          }
+      }
+  </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo">
+                <div class="logo"></div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item"><a href="HomePage.html">Home</a></div>
+                <div class="menu-item"><a href="TreatsPage.html">Treats</a></div>
+                <div class="menu-item"><a href="IceCreamPage.html">Ice Cream</a></div>
+                <div class="menu-item"><a href="CakePage.html">Cake</a></div>
+            </div>
+            <div class="hello-cart">
+                <div class="hello-sign">
+                    <p class="first">Hello,</p>
+                    <p class="third">Sign In</p>
+                </div>
+                <div class="cart">
+                    <div class="nav-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="form">
+      <form action="/login_page" method="post">
+          <div class="container">
+              <h1>Login</h1>
+              <p>Don't have an Account? Please <a href="SignupPage.html">Sign in</a></p>
+              <hr>
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+              <input type="checkbox" onclick="togglePasswordVisibility()"> Show Password
+              <label>
+                  <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me
+              </label>
+              <div class="clearfix">
+                  <button type="submit" class="loginbtn">Log In</button>
+              </div>
+              <div class="container">
+                  <button type="button" class="cancelbtn">Cancel</button>
+                  <span class="psw"><a href="SignupPage.html">Forgot password?</a></span>
+              </div>
+          </div>
+      </form>
+  </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1 class="logo-text">Treats With You</h1><br>
+                <p>Trats With You,<br>
+                    SeamLine Lane,<br>
+                    <span>Mumbai</span><br>
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
+                    <span><i class="fas fa-envelope"></i> &nbsp; info@yourbrand.com</span>
+                </div><br>
+            <span>
+              <div class="socials">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+              </div>
+            </span>
+          </div>
+          <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+              <a href="#">
+                <li>Home</li>
+              </a>
+              <a href="#">
+                <li>Our Team</li>
+              </a>
+              <a href="#">
+                <li>Location</li>
+              </a>
+              <a href="#">
+                <li>Terms and Conditions</li>
+              </a>
+            </ul>
+          </div>
+          <div class="colsub">
+            <h2>Mail Us</h2><br>
+            <div>
+              <input type="email" value="Your email ID here">
+              <button>Mail Us</button>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; Treats With You | Designed by Harshini
+        </div>
+    
+      </footer>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand .logo {
+            height: 50px;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .navbar-links a:hover {
+            color: #ddd;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .column {
+            width: 45%; /* Adjust the width as needed */
+            padding: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            height: 300px; /* Set a specific height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribute space between items */
+        }
+
+        .column:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .column button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .column button:hover {
+            background-color: #45a049;
+        }
+
+        /* Style for the full-width image */
+        .full-width-image-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .full-width-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .image-text {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 24px;
+            width: 70%; /* Adjust the width as needed */
+            text-align: left;
+        }
+
+        .image-button {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px; /* Add space above the button */
+        }
+
+        .image-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="Logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="navbar-links">
+            <a href="#">Home</a>
+            <a href="#">Community</a>
+            <a href="#">Rewards</a>
+            <a href="#">Login</a>
+        </div>
+    </nav>
+    <!-- Full-width image with text and button -->
+    <div class="full-width-image-container">
+        <img src="image.png" alt="Full Width Image" class="full-width-image">
+        <div class="image-text">Your Text Here<br>Line 2<br>Line 3</div>
+        <button class="image-button">Click Me!</button>
+    </div>
+    <div class="container">
+      <div class="column">
+          <h2>Column 1</h2>
+          <p>This is a description for the first column.</p>
+          <button>Click Me!</button>
+      </div>
+      <div class="column">
+          <h2>Column 2</h2>
+          <p>This is a description for the second column.</p>
+          <button>Click Me!</button>
+      </div>
+    </div>
+</body>
+</html>
